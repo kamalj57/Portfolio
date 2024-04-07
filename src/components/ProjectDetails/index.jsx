@@ -156,7 +156,7 @@ const Button = styled.a`
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  color:white;
+  color: white;
   padding: 12px 16px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.primary};
@@ -235,10 +235,19 @@ const index = ({ openModal, setOpenModal }) => {
             </>
           )}
           {project.category === "design" ? (
-            <Button  href={project?.designLink} target="new">
+            <Button href={project?.designLink} target="new">
               View Design
             </Button>
-          ) : (
+          ) : project.videoDemo ? (
+            <ButtonGroup>
+              <Button dull href={project?.github} target="new">
+                View Code
+              </Button>
+              <Button href={project?.videoDemo} target="new">
+                View Video Demo
+              </Button>
+            </ButtonGroup>
+          ) : project.webapp ? (
             <ButtonGroup>
               <Button dull href={project?.github} target="new">
                 View Code
@@ -247,6 +256,10 @@ const index = ({ openModal, setOpenModal }) => {
                 View Live App
               </Button>
             </ButtonGroup>
+          ) : (
+            <Button href={project?.github} target="new">
+              View Code
+            </Button>
           )}
         </Wrapper>
       </Container>

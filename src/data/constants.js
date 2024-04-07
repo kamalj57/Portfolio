@@ -24,6 +24,7 @@ import  plantdisease from './assets/plantdisease.png'
 import hospital from './assets/hospital.jpg'
 import Dashboard from './assets/Dashboard.png'
 import infotube from './assets/infotube.jpg'
+import kecvms from './assets/kecvms.png'
 
 export const Bio = {
   name: "KAMALESH J",
@@ -37,7 +38,6 @@ export const Bio = {
   resume: "https://drive.google.com/file/d/1dhHSAqJwQCZppAB4fOuixkJUvplbuVVZ/view?usp=drive_link",
   linkedin: "https://www.linkedin.com/in/kamalesh-j5720",
   figma: "https://www.figma.com/@kamalesh_j",
-  behance: "https://www.behance.net/kamalj_57",
   dribble: "https://dribbble.com/kamalj_57",
 };
 
@@ -155,7 +155,7 @@ export const projects = [
     ],
     category: "web app",
     github: "https://github.com/kamalj57/Dall-E",
-    webapp: "https://dall-e-beryl-six.vercel.app/",
+    videoDemo: "https://drive.google.com/file/d/1_Xpv0L95YX6v1ZQLt6EIJR7x53qOZv53/view?usp=drive_link",
   },
   {
     id: 1,
@@ -167,15 +167,28 @@ export const projects = [
     tags: ["React Js", "MongoDb", "Node Js", "Express Js"],
     category: "web app",
     github: "https://github.com/kamalj57/Expense_tracker",
-    webapp: "https://expense-tracker-beta-green.vercel.app/",
+    webapp: "https://expense-tracker-jk.vercel.app/",
 
   },
   {
     id: 2,
-    title: "Infotube_SIH'23",
+    title: "KEC Vechile Management System",
+    date: "Feb 2024 - FEb 2024",
+    description:
+      "Developed a full-stack web application that allows users to know  prior notification of bus services using MERN stack and twilio for sending notifications and node cron for schedule in the event of E-Horyzon'24",
+    image:kecvms,
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js","Twilio"],
+    category: "web app",
+    github: "https://github.com/kamalj57/KEC-VMS",
+    webapp: "",
+
+  },
+  {
+    id: 3,
+    title: "Infotube",
     date: "Aug 2023 - Aug2023",
     description:
-      "Developed the Infotube project, a project management app that helps the students to identify the unique projects and showcase their talents accross India ",
+      "Developed the Infotube project, a project management app that helps the students to identify the unique projects and showcase their talents accross India and presented at Smart India Internal Hackathon @Kec",
     image:infotube,
      tags: [
       "React Js",
@@ -188,19 +201,19 @@ export const projects = [
     webapp: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Event Managemet",
     date: "Feb-13 2023 - Feb-18 2023",
     description:
-      "Deveolped an event management app using HTML,CSS and Google Sheets for storage of data in a span of 5 days in the event of E-Horyzon'23,KEC",
+      "Deveolped an event management app using HTML,CSS and Google Sheets for storage of data in the event of E-Horyzon'23,KEC",
     image:eventmanagement,
-    tags: ["HTML", "Css", "Google Sheets"],
+    tags: ["HTML", "CSS", "Google Sheets"],
     category: "web app",
     github: "",
     webapp: "",
   },
   {
-    id: 4,
+    id: 5,
     title: "Hospital Management System",
     date: "Oct-30 2023 - Nov-03 2023",
     description:"Devloped an Hospital Management web app with an user-frinedly UI and have modules like appointement booking and the project is developed using the Agile Principles",
@@ -219,11 +232,11 @@ export const projects = [
     image:plantdisease,
     tags: ["Flutter", "CNN", "Tenserflow"],
     category: "android app",
-    github: "",
+    github: "https://github.com/kamalj57/PlantDiseaseIdentifierApp_Flutter",
     webapp: "",
   },
   {
-    id: 5,
+    id: 7,
     title: "Eldery To-Do",
     date: "Oct-30 2023 - Nov-03 2023",
     description:
@@ -231,11 +244,11 @@ export const projects = [
     image:Dashboard,
     tags: ["ReactJs","MongoDB","Express","NodeJs", "Axios"],
     category: "web app",
-    github: "",
+    github: "https://github.com/kamalj57/ElderyApp_ToDo",
     webapp: "",
   },
   {
-    id: 7,
+    id: 8,
     title: "Hospital Landing Page",
     date: "Jun 2023",
     description:
@@ -243,10 +256,10 @@ export const projects = [
     image:hospital,
     tags: ["Figma","Landing Page","Hospital UIkit"],
     category: "design",
-     designLink:"https://dribbble.com/shots/22274140-Web-view-for-Hospital-System?utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Web%20view%20for%20Hospital%20System&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Web%20view%20for%20Hospital%20System&utm_medium=Social_Share",
+    designLink:"https://dribbble.com/shots/22274140-Web-view-for-Hospital-System?utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Web%20view%20for%20Hospital%20System&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Web%20view%20for%20Hospital%20System&utm_medium=Social_Share",
   },
   {
-    id: 8,
+    id: 9,
     title: "Eldery ToDo_UI",
     date: "Oct-30 2023 - Nov-03 2023",
     description:
@@ -257,7 +270,7 @@ export const projects = [
     designLink:"https://dribbble.com/shots/22969610-Eldery-Remainder-App?utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Eldery%20Remainder%20App&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Eldery%20Remainder%20App&utm_medium=Social_Share"
   },
   {
-    id: 9,
+    id: 10,
     title: "Instagram Clone",
     date: "Jun 2023",
     description:
@@ -268,7 +281,7 @@ export const projects = [
     designLink:"https://dribbble.com/shots/22932500-Instagram-UI-Kit-2023-1-0?utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Instagram%20UI%20Kit%202023%201.0&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=kamalj_57&utm_content=Instagram%20UI%20Kit%202023%201.0&utm_medium=Social_Share"
   },
   {
-    id: 10,
+    id: 11,
     title: "Whatsapp Clone",
     date: "Jul 2023",
     description:"Designed an Whatsapp UI Kit with concept of separate groups and chat using Figma ",

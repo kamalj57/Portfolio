@@ -1,9 +1,6 @@
 import styled from 'styled-components';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import { Bio } from '../../data/constants';
+import {linkedin,github,figma,dribble} from '../SocailIcons/Icons'
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -60,21 +57,20 @@ color: ${({ theme }) => theme.text_primary};
     font-size: 1rem;
   }
 `;
+const IconStyled = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 20%;
+    justify-content: space-between;
 
-const SocialMediaIcons = styled.div`
-  display: flex;
-  margin-top: 1rem;
-`;
-
-const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
+    a{
+      color: black;
+      text-decoration: none; 
+    }
+    a:hover {
+      color:#854CE6;
+    }
 `;
 
 const Copyright = styled.p`
@@ -95,12 +91,12 @@ function Footer() {
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
         </Nav>
-        <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
-        </SocialMediaIcons>
+        <IconStyled>
+      <a href={Bio.linkedin} target='display' >{linkedin}</a>
+      <a href={Bio.github} target='display' >{github}</a>
+      <a href={Bio.figma} target='display' >{figma}</a>
+      <a href={Bio.dribble} target='display' >{dribble}</a>
+       </IconStyled>
         <Copyright>
           &copy; 2024 KAMALESH J. All rights reserved.
         </Copyright>

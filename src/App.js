@@ -14,7 +14,7 @@ import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
 import Volunteer from './components/Volunteering'
 import styled from "styled-components";
-
+import {Toaster} from 'react-hot-toast';
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
@@ -32,6 +32,7 @@ function App() {
   console.log(openModal)
   return (
     <ThemeProvider theme={lightTheme}>
+    <Toaster position="top-center"></Toaster>
       <Router >
         <Navbar />
         <Body>

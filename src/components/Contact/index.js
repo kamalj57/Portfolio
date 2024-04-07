@@ -1,9 +1,7 @@
-import React from 'react'
+import {React,useState} from 'react'
 import styled from 'styled-components'
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { Snackbar } from '@mui/material';
-
+import axios from 'axios';
+import {toast} from 'react-hot-toast';
 const Container = styled.div`
 display: flex;
 flex-direction: column;
@@ -118,50 +116,59 @@ const ContactButton = styled.input`
   color: white;
   font-size: 18px;
   font-weight: 600;
+  cursor:pointer;
 `
 
 
 
 const Contact = () => {
+  const [formDetails, setFormDetails] = useState({
+    email: '',
+    name: '',
+    subject: '',
+    message: ''
+  });
 
-  //hooks
-  const [open, setOpen] = React.useState(false);
-  const form = useRef();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormDetails((prevDetails) => ({
+      ...prevDetails,
+      [name]: value
+    }));
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE, form.current,process.env.REACT_APP_PUBLIC_KEY)
-      .then((result) => {
-        setOpen(true);
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
-      });
+  const handleSubmit = async(e) => {
+      e.preventDefault();
+      try {
+      const response= await axios.post('https://portfolio-server-agyc.onrender.com/form-submit',formDetails);
+      if(response.status===200){
+        toast.success("Email sent successfully!")
+        setFormDetails({
+          email: '',
+          name: '',
+          subject: '',
+          message: ''
+        })
+      }
+    } catch (error) {
+        toast.error("Server error! Please try again")
+    }
+   
   }
-
-
 
   return (
     <Container>
       <Wrapper>
-  
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
+        <ContactForm  onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" autoComplete='off' />
-          <ContactInput placeholder="Your Name" name="from_name" autoComplete='off'  />
-          <ContactInput placeholder="Subject" name="subject" autoComplete='off'  />
-          <ContactInputMessage placeholder="Message" rows="4" name="message"  autoComplete='off' />
+          <ContactInput placeholder="Your Email" name="email" value={formDetails.email} onChange={handleChange} autoComplete='off' />
+          <ContactInput placeholder="Your Name" name="name" value={formDetails.name} onChange={handleChange} autoComplete='off'  />
+          <ContactInput placeholder="Subject" name="subject" value={formDetails.subject} onChange={handleChange} autoComplete='off'  />
+          <ContactInputMessage placeholder="Message" rows="4" name="message" value={formDetails.message} onChange={handleChange} autoComplete='off' />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
       </Wrapper>
     </Container>
   )
