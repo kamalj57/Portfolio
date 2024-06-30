@@ -61,7 +61,7 @@ const IconStyled = styled.div`
     display: flex;
     flex-direction: row;
     padding: 10px;
-    width: 20%;
+    width: 30%;
     justify-content: space-between;
 
     a{
@@ -71,6 +71,9 @@ const IconStyled = styled.div`
     a:hover {
       color:#854CE6;
     }
+       @media (max-width: 768px) {
+   width:40%;
+  }
 `;
 
 const Copyright = styled.p`

@@ -136,11 +136,11 @@ const Contact = () => {
       [name]: value
     }));
   };
-
+const baseURL=process.env.REACT_APP_FORM_KEY;
   const handleSubmit = async(e) => {
       e.preventDefault();
       try {
-      const response= await axios.post('https://portfolio-server-agyc.onrender.com/form-submit',formDetails);
+      const response= await axios.post(baseURL,formDetails);
       if(response.status===200){
         toast.success("Email sent successfully!")
         setFormDetails({
